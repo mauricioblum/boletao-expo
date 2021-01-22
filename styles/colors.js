@@ -1,0 +1,27 @@
+export default {
+  white: '#fff',
+  lighter: '#eee',
+  light: '#ddd',
+  regular: '#999',
+  dark: '#666',
+  darker: '#333',
+  black: '#000',
+  purple: '#b9afff',
+  darkPurple: '#7258f6',
+  gray: '#bdbdbd',
+  altgray: '#b9bec4',
+  darkgray: '#90959d',
+  mediumPurple: '#494bf5',
+  secretPurple: '#5055f5',
+  background: 'rgb(234, 239, 245)',
+
+  primary: 'linear-gradient(rgb(92,97,246), rgb(59,61,245))',
+  secundary: '#d2d2ff',
+  success: '#9DCA83',
+  green: 'rgb(21,204,96)',
+  danger: '#e37a7a',
+
+  transparent: 'transparent',
+  darkTransparent: 'rgba(0,0,0,0.6)',
+  whiteTransparent: 'rgba(255,255,255,0.3)',
+};
