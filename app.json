@@ -22,10 +22,10 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF",
-        "package": "org.nativescript.boletaoapp",
-        "versionCode": 10018
-      }
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "org.nativescript.boletaoapp",
+      "versionCode": 10018
     },
     "web": {
       "favicon": "./assets/favicon.png"
