@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { RefreshControl, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -276,6 +276,6 @@ IuPay.propTypes = {
 };
 
 IuPay.navigationOptions = {
-  tabBarIcon: () => <Icon name="file-invoice" size={22} color="#000" />,
+  tabBarIcon: () => <FontAwesome5 name="file-invoice" size={22} color="#000" />,
   tabBarLabel: 'Boletos',
 };

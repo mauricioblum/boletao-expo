@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { Camera as RNCamera } from 'expo-camera';
 import BarcodeMask from 'react-native-barcode-mask';
+import { BarCodeScanner } from 'expo-barcode-scanner';
 import StepHeader from '../../components/StepHeader';
 import { FontAwesome5 } from '@expo/vector-icons';
 import * as ScreenOrientation from 'expo-screen-orientation';
-// import Orientation from 'react-native-orientation-locker';
 import { privateApi } from 'services/api';
 // import { BankslipParser } from './slipParser';
 
@@ -36,24 +36,37 @@ export default function BarcodeScanner({ navigation }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  function handleBarcode(data) {
+  async function lockToLandscapeLeft() {
+    await ScreenOrientation.lockAsync(
+      ScreenOrientation.OrientationLock.LANDSCAPE_LEFT
+    );
+  }
+
+  async function lockToPortrait() {
+    await ScreenOrientation.lockAsync(
+      ScreenOrientation.OrientationLock.PORTRAIT
+    );
+  }
+
+  async function handleBarcode(data) {
     setBarcodeData(data.data);
-    // Orientation.lockToPortrait();
+    await lockToPortrait();
     setEnableCamera(false);
   }
 
-  function openCamera() {
-    // Orientation.lockToLandscapeLeft();
+  async function openCamera() {
+    await lockToLandscapeLeft();
     setEnableCamera(true);
   }
 
-  function closeCamera() {
-    // Orientation.lockToPortrait();
+  async function closeCamera() {
+    console.log('close camera!');
+    await lockToPortrait();
     setEnableCamera(false);
   }
 
-  function goToReadBarcode() {
-    // Orientation.lockToPortrait();
+  async function goToReadBarcode() {
+    await lockToPortrait();
     setEnableCamera(false);
     // navigation.navigate('BarcodeForm');
   }
@@ -84,11 +97,11 @@ export default function BarcodeScanner({ navigation }) {
   }
 
   const [hasPermission, setHasPermission] = useState(null);
-  const [type, setType] = useState(Camera.Constants.Type.back);
+  const [type, setType] = useState(RNCamera.Constants.Type.back);
 
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
+      const { status } = await RNCamera.requestPermissionsAsync();
       setHasPermission(status === 'granted');
     })();
   }, []);
@@ -98,7 +111,11 @@ export default function BarcodeScanner({ navigation }) {
   }, []);
 
   if (hasPermission === null) {
-    return <View />;
+    return (
+      <View>
+        <Text>Please enable camera permission</Text>
+      </View>
+    );
   }
   if (hasPermission === false) {
     return <Text>No access to camera</Text>;
@@ -125,7 +142,7 @@ export default function BarcodeScanner({ navigation }) {
             lineAnimationDuration={3000}
           />
           <CloseButton onPress={() => closeCamera()}>
-            <FontAwesome5 name="close" size={35} color="#000" />
+            <FontAwesome5 name="times" size={35} color="#000" />
           </CloseButton>
           <TypeWrapperTop>
             <Title>ESCANEIE O CÓDIGO DE BARRAS DO BOLETO</Title>

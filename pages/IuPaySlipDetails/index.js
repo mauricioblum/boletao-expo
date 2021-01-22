@@ -74,8 +74,9 @@ export const CustomButtons = ({
   </ButtonView>
 );
 
-export default function IuPaySlipDetails({ navigation }) {
-  const slip = navigation.getParam('slip', {});
+export default function IuPaySlipDetails({ navigation, route }) {
+  // const slip = navigation.getParam('slip', {});
+  const slip = route.params?.slip ?? {};
   const [optionVisible, setOptionVisible] = useState(false);
   const [accountDetailsModalVisible, setAccountDetailsModalVisible] = useState(
     false

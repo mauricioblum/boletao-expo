@@ -100,7 +100,7 @@ export const CloseButton = styled.TouchableOpacity`
   position: absolute;
   top: 15px;
   left: 15px;
-  z-index: 5;
+  z-index: 300;
 `;
 
 export const TypeWrapperTop = styled.View`

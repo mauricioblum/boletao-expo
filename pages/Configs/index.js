@@ -3,7 +3,7 @@ import { Alert } from 'react-native';
 import PropTypes from 'prop-types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { privateApi } from 'services/api';
-import { getAppVersion } from 'utils/codePushUtils';
+// import { getAppVersion } from 'utils/codePushUtils';
 
 import Icon from 'react-native-vector-icons/Octicons';
 import {
@@ -20,13 +20,13 @@ export default function Configs({ navigation }) {
   const [loading, setLoading] = useState(false);
   const [codePushAppVersion, setCodePushAppVersion] = useState('Indisponível');
 
-  useEffect(() => {
-    const appVersion = getAppVersion();
+  // useEffect(() => {
+  //   const appVersion = getAppVersion();
 
-    if (appVersion) {
-      setCodePushAppVersion(appVersion.label);
-    }
-  }, []);
+  //   if (appVersion) {
+  //     setCodePushAppVersion(appVersion.label);
+  //   }
+  // }, []);
 
   async function handleLogout() {
     setLoading(true);

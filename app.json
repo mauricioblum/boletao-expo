@@ -1,10 +1,9 @@
 {
   "expo": {
-    "name": "boletaoApp",
+    "name": "Boletão",
     "slug": "boletaoApp",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "version": "8.0.0",
+    "icon": "./assets/appIcon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -16,12 +15,16 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": false,
-      "requireFullScreen": true
+      "requireFullScreen": true,
+      "bundleIdentifier": "org.nativescript.boletaoapp",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#FFFFFF",
+        "package": "org.nativescript.boletaoapp",
+        "versionCode": 10018
       }
     },
     "web": {

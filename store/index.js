@@ -18,15 +18,15 @@ const middlewares = [];
 
 // const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null;
 
-// const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 // middlewares.push(sagaMiddleware);
 
-const composer = compose(applyMiddleware(...middlewares));
+const composer = compose(applyMiddleware(...middlewares, sagaMiddleware));
 
 const store = createStore(persistedReducer, composer);
 const persistor = persistStore(store);
 
-// sagaMiddleware.run(sagas);
+sagaMiddleware.run(sagas);
 
 export { store, persistor };

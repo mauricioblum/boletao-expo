@@ -38,26 +38,22 @@ import ReceiptScreen from './pages/ReceiptScreen';
 import BigSlipDetails from './pages/BigSlipDetails';
 
 import { colors } from './styles';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const bottomTabOptions = {
-  navigationOptions: {
-    header: null,
-    headerMode: 'none',
+  style: {
+    backgroundColor: colors.background,
+    paddingBottom: 5,
   },
-  tabBarOptions: {
-    style: {
-      backgroundColor: colors.background,
-      paddingBottom: 5,
-    },
-    labelStyle: {
-      fontFamily: 'Montserrat-SemiBold',
-      fontSize: 10,
-      fontStyle: 'normal',
-      letterSpacing: -0.53,
-      textAlign: 'center',
-      color: colors.black,
-    },
+  labelStyle: {
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: 10,
+    fontStyle: 'normal',
+    letterSpacing: -0.53,
+    textAlign: 'center',
+    color: colors.black,
   },
+  labelPosition: 'below-icon',
 };
 
 const Stack = createStackNavigator();
@@ -65,7 +61,25 @@ const Tab = createBottomTabNavigator();
 
 function UserTabs() {
   return (
-    <Tab.Navigator tabBarOptions={bottomTabOptions}>
+    <Tab.Navigator
+      tabBarOptions={bottomTabOptions}
+      lazy
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color, size }) => {
+          const icons = {
+            IuPay: 'file-invoice',
+            Beneficiaries: 'money-bill',
+            MyBigBankSlips: 'barcode',
+            Configs: 'cog',
+            Notifications: 'concierge-bell',
+          };
+
+          return (
+            <FontAwesome5 name={icons[route.name]} color={'#000'} size={22} />
+          );
+        },
+      })}
+    >
       <Tab.Screen name="IuPay" component={IuPay} />
       <Tab.Screen name="Beneficiaries" component={Beneficiaries} />
       <Tab.Screen name="MyBigBankSlips" component={MyBigBankSlips} />
@@ -77,6 +91,7 @@ function UserTabs() {
 
 // eslint-disable-next-line react/prop-types
 const Routes = ({ userLogged = false }) => {
+  console.log('userLogged', userLogged);
   return (
     <NavigationContainer>
       <Stack.Navigator

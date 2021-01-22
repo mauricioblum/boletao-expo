@@ -62,7 +62,7 @@ export default function Login({ navigation }) {
       const userDetails = await AsyncStorage.getItem('@Boletao:userDetails');
       // console.tron.log(userDetails);
     } catch (err) {
-      // (err.response.data);
+      console.log('api error', err);
       setError(err.response.data.error && 'CPF ou senha inválido(s) !');
       setLoading(false);
     }
