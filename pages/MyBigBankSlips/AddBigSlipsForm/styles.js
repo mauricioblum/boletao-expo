@@ -21,7 +21,7 @@ export const Button = styled.TouchableOpacity.attrs({
   box-shadow: 0px 2px 10px rgba(14, 0, 233, 0.5);
   border-radius: ${metrics.baseRadius};
   height: 60px;
-  margin-top: ${metrics.baseMargin * 3};
+  margin-top: ${metrics.baseMargin * 3}px;
   margin-bottom: ${getBottomSpace()}px;
   align-items: center;
   justify-content: center;
@@ -34,7 +34,7 @@ export const ButtonDisabled = styled.TouchableOpacity.attrs({
   background-color: ${colors.gray};
   border-radius: ${metrics.baseRadius};
   height: 60px;
-  margin-top: ${metrics.baseMargin * 3};
+  margin-top: ${metrics.baseMargin * 3}px;
   margin-bottom: ${getBottomSpace()}px;
   align-items: center;
   justify-content: center;

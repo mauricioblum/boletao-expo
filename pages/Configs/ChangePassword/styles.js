@@ -27,7 +27,7 @@ export const AlertError = styled.Text`
   color: ${colors.danger};
   letter-spacing: 1.39;
   font-size: 13px;
-  margin-top: ${metrics.baseMargin};
+  margin-top: ${metrics.baseMargin}px;
 `;
 
 export const Label = styled.Text`
@@ -73,7 +73,7 @@ export const Button = styled.TouchableOpacity.attrs({
   box-shadow: 0px 2px 10px rgba(14, 0, 233, 0.5);
   border-radius: ${metrics.baseRadius};
   height: 60px;
-  margin-top: ${metrics.baseMargin * 8};
+  margin-top: ${metrics.baseMargin * 8}px;
   align-items: center;
   justify-content: center;
 `;

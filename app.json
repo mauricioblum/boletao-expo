@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/images/boletao-transparent.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "org.nativescript.boletaoapp",

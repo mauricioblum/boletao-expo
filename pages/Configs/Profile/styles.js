@@ -77,7 +77,7 @@ export const Button = styled.TouchableOpacity.attrs({
   box-shadow: 0px 2px 10px rgba(14, 0, 233, 0.5);
   border-radius: ${metrics.baseRadius};
   height: 60px;
-  margin-top: ${metrics.baseMargin * 8};
+  margin-top: ${metrics.baseMargin * 8}px;
   align-items: center;
   justify-content: center;
 `;

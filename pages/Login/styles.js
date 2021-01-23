@@ -52,7 +52,7 @@ export const TitleLine = styled.View`
   width: 13px;
   height: 5px;
   border-radius: 3px;
-  margin-top: ${metrics.baseMargin};
+  margin-top: ${metrics.baseMargin}px;
   margin-bottom: ${metrics.baseMargin * 6}px;
 `;
 
