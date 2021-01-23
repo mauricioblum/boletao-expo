@@ -1,8 +1,8 @@
 import 'react-native-gesture-handler';
+import { enableScreens } from 'react-native-screens';
 
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import * as firebase from 'firebase';
@@ -10,9 +10,9 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { NotificationsTypes } from 'store/ducks/notifications';
 
-import { store, persistor } from './store';
-import * as NavigationService from './services/NavigationService';
-import Routes from './routes';
+import { store, persistor } from './src/store';
+import * as NavigationService from './src/services/NavigationService';
+import Routes from './src/routes';
 import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
 import { customFonts } from './assets/fonts/customFonts';
@@ -27,6 +27,8 @@ import { customFonts } from './assets/fonts/customFonts';
 // };
 
 // firebase.initializeApp(firebaseConfig);
+
+enableScreens();
 
 export default function App() {
   const [userLogged, setUserLogged] = useState('');
@@ -143,11 +145,7 @@ export default function App() {
           barStyle="dark-content"
           backgroundColor="rgb(234, 239, 245)"
         />
-        <Routes
-          uriPrefix={prefix}
-          ref={(navigation) => NavigationService.setNavigator(navigation)}
-          userLogged={userLogged}
-        />
+        <Routes uriPrefix={prefix} userLogged={userLogged} />
       </PersistGate>
     </Provider>
   );
