@@ -21,7 +21,6 @@ export const Label = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 13px;
-  letter-spacing: 14px;
 `;
 
 export const Value = styled.Text`
@@ -56,7 +55,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
 `;
 
@@ -70,7 +69,6 @@ export const SavePaymentText = styled.Text`
   font-family: 'Montserrat-Medium';
   color: #3f40f0;
   font-size: 13px;
-  letter-spacing: 14px;
 `;
 
 export const DeleteView = styled.View`
@@ -91,7 +89,6 @@ export const DeleteText = styled.Text`
   color: ${colors.white};
   font-size: 13px;
   font-weight: bold;
-  letter-spacing: 14px;
 `;
 
 export const SlipList = styled(SwipeListView)`
@@ -127,7 +124,7 @@ export const SlipTitle = styled.Text.attrs({
   ellipseMode: 'tail',
 })`
   font-size: 13px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-transform: uppercase;
@@ -151,7 +148,7 @@ export const AlertError = styled.Text`
 
 export const SingleSlipValue = styled.Text`
   font-size: 13px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-align: left;

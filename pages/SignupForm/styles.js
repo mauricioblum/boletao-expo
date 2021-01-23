@@ -35,7 +35,7 @@ export const Label = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.darkgray};
   font-size: 13px;
-  letter-spacing: 14px;
+
   margin-bottom: ${metrics.baseMargin}px;
   text-align: left;
   align-self: flex-start;
@@ -59,7 +59,7 @@ export const Input = styled.TextInput.attrs({
   color: #90959d;
   font-family: 'Montserrat-SemiBold';
   font-size: 13px;
-  letter-spacing: 14px;
+
   margin-bottom: ${metrics.baseMargin * 2}px;
 `;
 
@@ -117,7 +117,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
 `;
 
@@ -132,7 +132,6 @@ export const LabelError = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.danger};
   font-size: 15px;
-  letter-spacing: 14px;
 
   text-align: center;
   align-self: flex-start;

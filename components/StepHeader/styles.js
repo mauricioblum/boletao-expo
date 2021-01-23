@@ -20,7 +20,7 @@ export const HeaderTitle = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 24px;
-  letter-spacing: 1px;
+
   text-align: center;
 `;
 
@@ -28,7 +28,6 @@ export const HeaderSubTitle = styled.Text`
   font-family: 'Montserrat-Medium';
   color: ${colors.altgray};
   font-size: 13px;
-  letter-spacing: 22px;
 `;
 
 export const HeaderIcon = styled.TouchableOpacity.attrs({

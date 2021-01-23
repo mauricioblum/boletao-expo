@@ -50,7 +50,7 @@ export const Error = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.danger};
   font-size: 15px;
-  letter-spacing: 14px;
+
   text-align: center;
   align-self: flex-start;
   text-transform: uppercase;
@@ -60,7 +60,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
 `;
 
@@ -99,7 +99,7 @@ export const SlipTitle = styled.Text.attrs({
   ellipseMode: 'tail',
 })`
   font-size: 13px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-transform: uppercase;
@@ -126,7 +126,7 @@ export const DueDate = styled.Text`
 
 export const Value = styled.Text`
   font-size: 13px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-align: left;
@@ -172,7 +172,7 @@ export const UnifiedText = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 19px;
-  letter-spacing: 1.46;
+
   text-align: center;
 `;
 
@@ -180,7 +180,7 @@ export const UnifiedValueText = styled.Text`
   font-family: 'Montserrat-Black';
   color: ${colors.black};
   font-size: 27px;
-  letter-spacing: 12px;
+
   text-align: center;
   margin-top: ${metrics.baseMargin / 2}px;
   margin-bottom: ${metrics.baseMargin * 3}px;

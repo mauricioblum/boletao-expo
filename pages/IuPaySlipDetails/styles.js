@@ -18,7 +18,7 @@ export const SlipButtonText = styled.Text`
   font-family: 'Montserrat-SemiBold';
   font-size: 14px;
   color: #fff;
-  letter-spacing: 12px;
+
   text-align: center;
 `;
 

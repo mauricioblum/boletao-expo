@@ -34,7 +34,7 @@ export const Logo = styled.Image`
 export const Title = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
-  letter-spacing: 1.39px;
+
   text-transform: uppercase;
   font-size: 15px;
 `;
@@ -42,7 +42,7 @@ export const Title = styled.Text`
 export const AlertError = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.danger};
-  letter-spacing: 1.39px;
+
   font-size: 13px;
   margin-top: ${metrics.baseMargin}px;
 `;
@@ -75,7 +75,6 @@ export const InputCpf = styled.TextInput.attrs({
   color: #90959d;
   font-family: 'Montserrat-SemiBold';
   font-size: 13px;
-  letter-spacing: 14px;
 `;
 
 export const InputPassword = styled.TextInput.attrs({
@@ -97,7 +96,7 @@ export const InputPassword = styled.TextInput.attrs({
   color: ${colors.darkPurple};
   font-family: 'Montserrat-SemiBold';
   font-size: 13px;
-  letter-spacing: 14px;
+
   margin-top: ${metrics.baseMargin * 2}px;
 `;
 
@@ -130,7 +129,7 @@ export const LoginButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
 `;
 
@@ -147,7 +146,7 @@ export const ForgotText = styled.Text`
   color: ${colors.gray};
   text-align: center;
   font-size: 11px;
-  letter-spacing: 1.3px;
+
   margin-bottom: ${metrics.baseMargin * 2}px;
 `;
 
@@ -157,5 +156,4 @@ export const SignupText = styled.Text`
   text-transform: uppercase;
   text-align: center;
   font-size: 11px;
-  letter-spacing: 1.3px;
 `;

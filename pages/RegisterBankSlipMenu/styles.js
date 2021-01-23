@@ -29,7 +29,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
   text-transform: uppercase;
 `;

@@ -32,7 +32,7 @@ export const Input = styled.TextInput.attrs({
   color: ${colors.black};
   font-family: 'Montserrat-SemiBold';
   font-size: 13px;
-  letter-spacing: 14px;
+
   margin-bottom: ${metrics.baseMargin}px;
 `;
 
@@ -53,6 +53,6 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
 `;

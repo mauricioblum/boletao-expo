@@ -14,7 +14,7 @@ export const PageHeader = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 24px;
-  letter-spacing: 1px;
+
   text-align: left;
   margin-top: ${getStatusBarHeight() + 10}px;
   padding-left: ${metrics.basePadding}px;
@@ -29,7 +29,7 @@ export const DayTitle = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.darkgray};
   font-size: 13px;
-  letter-spacing: 14px;
+
   margin-bottom: ${metrics.baseMargin}px;
 `;
 
@@ -86,7 +86,7 @@ export const Strong = styled.Text`
   font-family: 'Montserrat-Black';
   color: ${colors.black};
   font-size: 14px;
-  letter-spacing: 14px;
+
   line-height: 17px;
 `;
 

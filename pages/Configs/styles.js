@@ -17,7 +17,7 @@ export const PageHeader = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 24px;
-  letter-spacing: 1px;
+
   text-align: left;
   margin-top: ${getStatusBarHeight() + 10}px;
   padding-left: ${metrics.basePadding}px;
@@ -48,7 +48,6 @@ export const InputCpf = styled.TextInput.attrs({
   color: #90959d;
   font-family: 'Montserrat-SemiBold';
   font-size: 13px;
-  letter-spacing: 14px;
 `;
 
 export const Button = styled.TouchableOpacity.attrs({
@@ -68,7 +67,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
 `;
 
@@ -93,14 +92,14 @@ export const MenuItem = styled.TouchableOpacity.attrs({
 
 export const MenuItemText = styled.Text`
   font-family: 'Montserrat-Medium';
-  letter-spacing: 23px;
+
   font-size: 14px;
   color: ${colors.black};
 `;
 
 export const VersionText = styled.Text`
   font-family: 'Montserrat-Regular';
-  letter-spacing: 23px;
+
   font-size: 12px;
   margin-left: 5px;
   margin-top: 5px;

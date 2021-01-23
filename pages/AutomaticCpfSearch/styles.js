@@ -11,7 +11,7 @@ export const PageHeader = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 24px;
-  letter-spacing: 1px;
+
   text-align: center;
   margin-top: ${getStatusBarHeight() + 10}px;
 `;
@@ -41,7 +41,7 @@ export const InputCpf = styled.TextInput.attrs({
   color: #90959d;
   font-family: 'Montserrat-SemiBold';
   font-size: 13px;
-  letter-spacing: 12px;
+
   margin-bottom: ${metrics.baseMargin}px;
 `;
 
@@ -62,7 +62,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 16px;
+
   font-family: 'Montserrat-SemiBold';
 `;
 
@@ -74,5 +74,4 @@ export const AddCpfText = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 13px;
-  letter-spacing: 22px;
 `;

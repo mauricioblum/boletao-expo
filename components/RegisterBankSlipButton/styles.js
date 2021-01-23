@@ -24,6 +24,6 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 16px;
+
   font-family: 'Montserrat-SemiBold';
 `;

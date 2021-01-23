@@ -64,7 +64,7 @@ export const SlipName = styled.Text`
   font-family: 'Montserrat-ExtraBold';
   font-size: 34px;
   font-style: normal;
-  letter-spacing: 8px;
+
   text-align: center;
   color: ${colors.black};
 `;
@@ -133,7 +133,6 @@ export const ButtonText = styled.Text`
   font-family: 'Montserrat-ExtraBold';
   text-align: center;
   font-size: 12px;
-  letter-spacing: 12px;
 `;
 
 export const NoProof = styled.Text`
@@ -141,7 +140,6 @@ export const NoProof = styled.Text`
   font-family: 'Montserrat-ExtraBold';
   text-align: center;
   font-size: 12px;
-  letter-spacing: 12px;
 `;
 
 export const AltButtonText = styled(ButtonText)`
@@ -156,5 +154,4 @@ export const SavePaymentButton = styled.TouchableOpacity.attrs({
 export const SavePaymentText = styled.Text`
   color: #3c3ef5;
   font-size: 13px;
-  letter-spacing: 22px;
 `;

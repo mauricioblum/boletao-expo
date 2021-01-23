@@ -25,7 +25,7 @@ export const Form = styled.KeyboardAvoidingView.attrs({
 export const AlertError = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.danger};
-  letter-spacing: 25px;
+
   font-size: 13px;
   margin-top: ${metrics.baseMargin}px;
 `;
@@ -34,7 +34,7 @@ export const Label = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 13px;
-  letter-spacing: 14px;
+
   margin-bottom: ${metrics.baseMargin}px;
   text-align: left;
   align-self: flex-start;
@@ -56,7 +56,7 @@ export const Input = styled.TextInput.attrs({
   color: #90959d;
   font-family: 'Montserrat-SemiBold';
   font-size: 13px;
-  letter-spacing: 14px;
+
   margin-bottom: ${metrics.baseMargin}px;
 `;
 
@@ -82,6 +82,6 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 14px;
+
   font-family: 'Montserrat-SemiBold';
 `;
