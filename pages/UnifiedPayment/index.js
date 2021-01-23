@@ -21,13 +21,13 @@ import {
   SlipCalendar,
 } from './styles';
 
-export default function UnifiedPayment({ navigation }) {
+export default function UnifiedPayment({ navigation, route }) {
   const unifiedValue = useSelector((state) =>
     state.iupaybigslips.data.reduce((sum, cur) => sum + cur.cost / 100, 0)
   );
-  const selectedSlips = navigation.getParam('slips', []);
+  const selectedSlips = route.params?.selectedSlips ?? [];
   const today = Date.now();
-  const pivotDate = navigation.getParam('pivotDate', today);
+  const pivotDate = route.params?.pivotDate ?? today;
   const [slipDate, setSlipDate] = useState({
     year: format(today, 'yyyy'),
     month: format(today, 'MM'),

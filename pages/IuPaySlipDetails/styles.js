@@ -9,16 +9,16 @@ export const SlipButton = styled.TouchableOpacity`
   width: 100%;
   padding: 9px 15px;
   border-radius: 8px;
-  border: ${props =>
+  border: ${(props) =>
     props.bgColor ? `solid 2px ${props.bgColor}` : 'solid 2px #fff'};
-  background-color: ${props => props.bgColor || '#fff'};
+  background-color: ${(props) => props.bgColor || '#fff'};
 `;
 
 export const SlipButtonText = styled.Text`
   font-family: 'Montserrat-SemiBold';
   font-size: 14px;
   color: #fff;
-  letter-spacing: 0.5;
+  letter-spacing: 12px;
   text-align: center;
 `;
 
@@ -30,7 +30,7 @@ export const Options = styled.View`
 export const Option = styled.TouchableOpacity`
   padding: 8px 10px;
   width: 100%;
-  border-bottom-width: ${props => (!props.noBorder ? '1px' : '0')};
+  border-bottom-width: ${(props) => (!props.noBorder ? '1px' : '0')};
   border-bottom-color: #000;
 `;
 export const OptionText = styled.Text`
@@ -68,7 +68,7 @@ export const ModalClose = styled.TouchableOpacity`
 export const ModalTitle = styled.Text`
   font-family: 'Montserrat-SemiBold';
   font-size: 15px;
-  color: ${props => props.color || '#650199'};
+  color: ${(props) => props.color || '#650199'};
   margin-bottom: 44px;
 `;
 

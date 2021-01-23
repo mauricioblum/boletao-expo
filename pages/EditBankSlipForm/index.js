@@ -21,8 +21,8 @@ import {
   RecurrentCheck,
 } from './styles';
 
-export default function EditBankSlipForm({ navigation }) {
-  const slip = navigation.getParam('slip', {});
+export default function EditBankSlipForm({ navigation, route }) {
+  const slip = route.params?.slip ?? {};
   const [slipFields, setSlipFields] = useState(slip);
   const rawValue = useRef();
   const [checked, setChecked] = useState(slip.recurrent);

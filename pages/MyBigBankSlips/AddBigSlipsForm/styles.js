@@ -50,7 +50,7 @@ export const Error = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.danger};
   font-size: 15px;
-  letter-spacing: 0.67;
+  letter-spacing: 14px;
   text-align: center;
   align-self: flex-start;
   text-transform: uppercase;
@@ -60,7 +60,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 0.62;
+  letter-spacing: 14px;
   font-family: 'Montserrat-SemiBold';
 `;
 
@@ -99,7 +99,7 @@ export const SlipTitle = styled.Text.attrs({
   ellipseMode: 'tail',
 })`
   font-size: 13px;
-  letter-spacing: 1.11;
+  letter-spacing: 14px;
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-transform: uppercase;
@@ -118,7 +118,7 @@ export const Cover = styled.Image.attrs({
 
 export const DueDate = styled.Text`
   font-size: 11px;
-  letter-spacing: 0.99;
+
   font-family: 'Montserrat-SemiBold';
   color: #bdbdbd;
   width: 150px;
@@ -126,7 +126,7 @@ export const DueDate = styled.Text`
 
 export const Value = styled.Text`
   font-size: 13px;
-  letter-spacing: 1.11;
+  letter-spacing: 14px;
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-align: left;
@@ -135,7 +135,7 @@ export const Value = styled.Text`
 
 export const Status = styled.Text`
   font-size: 11px;
-  letter-spacing: 0.99;
+
   font-family: 'Montserrat-SemiBold';
   text-align: right;
   align-self: flex-end;
@@ -180,7 +180,7 @@ export const UnifiedValueText = styled.Text`
   font-family: 'Montserrat-Black';
   color: ${colors.black};
   font-size: 27px;
-  letter-spacing: 2.07;
+  letter-spacing: 12px;
   text-align: center;
   margin-top: ${metrics.baseMargin / 2}px;
   margin-bottom: ${metrics.baseMargin * 3}px;

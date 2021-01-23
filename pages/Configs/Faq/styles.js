@@ -15,7 +15,7 @@ export const Question = styled.Text`
   font-family: 'Montserrat-Black';
   color: ${colors.black};
   font-size: 15px;
-  letter-spacing: 0.51;
+  letter-spacing: 12px;
   text-align: left;
   align-self: flex-start;
   margin-bottom: ${metrics.baseMargin + 5}px;
@@ -25,7 +25,7 @@ export const Text = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 13px;
-  letter-spacing: 0.51;
+  letter-spacing: 12px;
   text-align: left;
   align-self: flex-start;
   margin-bottom: ${metrics.baseMargin}px;
@@ -35,7 +35,7 @@ export const Slogan = styled.Text`
   font-family: 'Montserrat-Black';
   color: ${colors.black};
   font-size: 15px;
-  letter-spacing: 0.51;
+  letter-spacing: 12px;
   text-align: center;
   align-self: flex-start;
   margin-bottom: ${metrics.baseMargin + 20}px;

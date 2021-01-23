@@ -3,10 +3,10 @@ import { Alert, Linking } from 'react-native';
 import PropTypes from 'prop-types';
 import { Receipt } from 'react-native-superdda-iupay';
 
-export default function ReceiptScreen({ navigation }) {
-  const slip = navigation.getParam('slip', {});
+export default function ReceiptScreen({ navigation, route }) {
+  const slip = route.params?.slip ?? {};
 
-  const handleShare = downloadURL => {
+  const handleShare = (downloadURL) => {
     if (downloadURL) {
       Linking.openURL(downloadURL);
     } else {

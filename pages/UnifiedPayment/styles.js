@@ -80,7 +80,7 @@ export const HeaderTitle = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 24px;
-  letter-spacing: 0.14;
+  letter-spacing: 1px;
   text-align: center;
 `;
 
@@ -88,7 +88,7 @@ export const HeaderSubTitle = styled.Text`
   font-family: 'Montserrat-Medium';
   color: ${colors.altgray};
   font-size: 13px;
-  letter-spacing: 1.11;
+  letter-spacing: 14px;
 `;
 
 export const HeaderIcon = styled.TouchableOpacity.attrs({
@@ -117,7 +117,6 @@ export const UnifiedText = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 13px;
-  letter-spacing: 1.11;
   text-align: center;
 `;
 
@@ -125,7 +124,7 @@ export const UnifiedValueText = styled.Text`
   font-family: 'Montserrat-Black';
   color: ${colors.black};
   font-size: 13px;
-  letter-spacing: 1.11;
+  letter-spacing: 14px;
   text-align: right;
 `;
 

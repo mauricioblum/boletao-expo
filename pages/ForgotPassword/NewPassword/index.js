@@ -16,13 +16,13 @@ import {
   TouchText,
 } from '../styles';
 
-export default function NewPassword({ navigation }) {
+export default function NewPassword({ navigation, route }) {
   const [pass, setPass] = useState('');
   const [confirmPass, setConfirmPass] = useState('');
   const [message, setMessage] = useState('');
   const [messageError, setMessageError] = useState('');
   const [loading, setLoading] = useState(false);
-  const token = navigation.getParam('token', 'null');
+  const token = route.params?.token ?? 'null';
 
   async function handleSubmit() {
     setLoading(true);

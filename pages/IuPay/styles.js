@@ -62,7 +62,7 @@ export const IuPayIcon = styled.Text`
   font-family: 'Montserrat-SemiBold';
   font-size: 18px;
   color: #000000;
-  letter-spacing: 0.5;
+  letter-spacing: 12px;
 `;
 
 export const MessageText = styled.Text`

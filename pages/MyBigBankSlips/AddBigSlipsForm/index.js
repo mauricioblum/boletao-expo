@@ -27,8 +27,8 @@ import {
 } from './styles';
 import { BigSlipsTypes } from 'store/ducks/bigslips';
 
-export default function AddBigSlipsForm({ navigation }) {
-  const bigslip = navigation.getParam('bigslip', {});
+export default function AddBigSlipsForm({ navigation, route }) {
+  const bigslip = route.params?.bigslip ?? {};
   const bankslips = useSelector((state) => state.bankslips);
   const bigslipsState = useSelector((state) => state.bigslips);
   const [selectedSlips, setSelectedSlips] = useState([]);

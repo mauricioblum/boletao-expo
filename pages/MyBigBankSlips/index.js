@@ -36,15 +36,24 @@ export default function MyBigBankSlips({ navigation }) {
     (state) => state.bigslips.filteredData
   );
   const iupaybigslips = useSelector((state) => state.iupaybigslips.data);
+  console.log('boeltos', iupaybigslips);
 
   const formattedBigSlips = useMemo(() => {
     return iupaybigslips.map((slip) => ({
       ...slip,
+      issuer: {
+        ...slip.issuer,
+        color: {
+          ...slip.issuer.color,
+          background: slip.issuer.color?.background ?? '#777',
+          foreground: slip.issuer.color?.foreground ?? '#e3e3e3',
+        },
+      },
       value: slip.cost / 100,
       logo: slip.issuer.logoURL,
       dueDate: parseDate(slip.dueDate),
       isPaid: slip.status !== 'OPENED',
-      barColor: slip.issuer.color.background || '#333',
+      barColor: slip.issuer.color?.background ?? '#333',
       onCardClick: () => {},
     }));
   }, [iupaybigslips]);

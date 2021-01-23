@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { Container, Message } from './styles';
 
-export default function BankSlipSuccess({ navigation }) {
+export default function BankSlipSuccess({ navigation, route }) {
   const defaultDelay = 5000;
-  const message = navigation.getParam(
-    'message',
-    'Boleto cadastrado com sucesso!'
-  );
-  const message2 = navigation.getParam('message2', '');
-  const destination = navigation.getParam('destination', 'IuPay');
-  const delay = navigation.getParam('delay', defaultDelay);
+
+  const message = route.params?.message ?? '';
+  const message2 = route.params?.message2 ?? '';
+  const destination = route.params?.destination ?? 'IuPay';
+  const delay = route.params?.delay ?? defaultDelay;
 
   useEffect(() => {
     setTimeout(() => navigation.navigate(destination), delay);

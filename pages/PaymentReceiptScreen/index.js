@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { PaymentDetails } from 'react-native-superdda-iupay';
 import { Share } from 'react-native';
 
-export default function PaymentReceiptScreen({ navigation }) {
-  const slip = navigation.getParam('slip', {});
+export default function PaymentReceiptScreen({ navigation, route }) {
+  const slip = route.params?.slip ?? {};
 
   const handlePayShare = () => {
     Share.share({
@@ -16,7 +16,7 @@ export default function PaymentReceiptScreen({ navigation }) {
   return (
     <PaymentDetails
       barCode={slip.barcode}
-      baseColor={slip.issuer.color.background || '#333'}
+      baseColor={slip.issuer.color?.background || '#333'}
       beneficiaryName={slip.issuer.name}
       confirmPaymentButtonText="Pagar no meu banco"
       dueDate={slip.dueDate}

@@ -24,13 +24,13 @@ export const Title = styled.Text`
   color: ${colors.black};
   font-family: 'Montserrat-Black';
   font-size: 24px;
-  letter-spacing: 0.14;
+  letter-spacing: 1px;
 `;
 
 export const Subtitle = styled.Text`
   color: ${colors.altgray};
   font-family: 'Montserrat-SemiBold';
   font-size: 13px;
-  letter-spacing: 1.11;
+  letter-spacing: 12px;
   margin-top: ${metrics.baseMargin / 2}px;
 `;

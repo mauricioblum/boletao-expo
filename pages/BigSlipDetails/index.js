@@ -26,8 +26,8 @@ import {
 import { parseStringToDate } from 'utils/formatUtils';
 import { toCurrency } from 'utils/currency';
 
-export default function BigSlipDetails({ navigation }) {
-  const bigslipParams = navigation.getParam('bigslip', {});
+export default function BigSlipDetails({ navigation, route }) {
+  const bigslipParams = route.params?.bigslipParams ?? {};
   const dispatch = useDispatch();
   const [bigslip, setBigSlip] = useState(bigslipParams);
 

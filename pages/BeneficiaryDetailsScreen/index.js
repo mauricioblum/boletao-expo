@@ -9,8 +9,8 @@ import PropTypes from 'prop-types';
 import { Container } from './styles';
 import { privateApi } from 'services/api';
 
-export default function BeneficiaryDetailsScreen({ navigation }) {
-  const beneficiary = navigation.getParam('beneficiary', {});
+export default function BeneficiaryDetailsScreen({ navigation, route }) {
+  const beneficiary = route.params?.beneficiary ?? {};
   const [refreshing, setRefreshing] = useState(true);
   const [beneficiaryPaymentHistory, setBeneficiaryPaymentHistory] = useState(
     []

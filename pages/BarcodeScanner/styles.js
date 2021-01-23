@@ -28,7 +28,7 @@ export const PageHeader = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 24px;
-  letter-spacing: 0.14;
+  letter-spacing: 1px;
   text-align: center;
   margin-top: ${getStatusBarHeight() + 10}px;
 `;
@@ -50,7 +50,7 @@ export const InputBarcode = styled.TextInput.attrs({
   color: #90959d;
   font-family: 'Montserrat-SemiBold';
   font-size: 13px;
-  letter-spacing: 0.67;
+  letter-spacing: 10px;
   margin-bottom: ${metrics.baseMargin}px;
 `;
 
@@ -70,7 +70,7 @@ export const Button = styled.TouchableOpacity.attrs({
 export const AlertError = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.danger};
-  letter-spacing: 1.39;
+  letter-spacing: 24px;
   font-size: 13px;
   margin-top: ${metrics.baseMargin}px;
 `;
@@ -92,7 +92,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 0.62;
+  letter-spacing: 10px;
   font-family: 'Montserrat-SemiBold';
 `;
 

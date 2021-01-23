@@ -39,7 +39,7 @@ export default function App() {
       );
     }
     lockToPortrait();
-    // checkLogin();
+    checkLogin();
     // startNotificationService();
   }, []);
 
@@ -148,10 +148,6 @@ export default function App() {
           ref={(navigation) => NavigationService.setNavigator(navigation)}
           userLogged={userLogged}
         />
-        {/* <View style={styles.container}>
-            <Text>Open up App.js to start working on your apps!</Text>
-            <StatusBar style="auto" />
-          </View> */}
       </PersistGate>
     </Provider>
   );

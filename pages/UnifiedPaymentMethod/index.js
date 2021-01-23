@@ -24,12 +24,13 @@ import {
   LoadingContainer,
 } from './styles';
 
-export default function UnifiedPaymentMethod({ navigation }) {
-  const unifiedValue = navigation.getParam('unifiedValue', 0);
-  const dueDay = navigation.getParam('dueDay', 0);
-  const dueMonth = navigation.getParam('dueMonth', 0);
-  const dueYear = navigation.getParam('dueYear', 2020);
-  const selectedSlips = navigation.getParam('slips', []);
+export default function UnifiedPaymentMethod({ navigation, route }) {
+  const unifiedValue = route.params?.unifiedValue ?? 0;
+  const dueDay = route.params?.dueDay ?? 0;
+  const dueMonth = route.params?.dueMonth ?? 0;
+  const dueYear = route.params?.dueYear ?? 2020;
+  const selectedSlips = route.params?.selectedSlips ?? [];
+
   const [loading, setLoading] = useState(false);
   // const loading = useSelector(state => state.bigslips.loading);
   const dispatch = useDispatch();

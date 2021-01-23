@@ -12,7 +12,7 @@ export const Message = styled.Text`
   font-family: 'Montserrat-SemiBold';
   font-size: 24px;
   color: ${colors.black};
-  letter-spacing: 0.14px;
+  letter-spacing: 1px;
   text-align: center;
   max-width: 330px;
   margin-top: ${metrics.baseMargin * 2}px;

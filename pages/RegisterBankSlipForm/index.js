@@ -31,8 +31,8 @@ import {
 } from './styles';
 import { BankSlipsTypes } from 'store/ducks/bankslips';
 
-export default function RegisterBankSlipForm({ navigation }) {
-  const barcodeLine = navigation.getParam('barcodeLine', 0);
+export default function RegisterBankSlipForm({ navigation, route }) {
+  const barcodeLine = route.params?.barcodeLine ?? 0;
   const [slipFields, setSlipFields] = useState({
     idUser: 0,
     line: barcodeLine,

@@ -63,7 +63,7 @@ export const Title = styled.Text.attrs({
 })`
   font-size: 13px;
   max-width: 140px;
-  letter-spacing: 1.11;
+  letter-spacing: 22px;
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-transform: uppercase;
@@ -71,7 +71,7 @@ export const Title = styled.Text.attrs({
 
 export const HeaderTitle = styled.Text`
   font-size: 13px;
-  letter-spacing: 1.11;
+  letter-spacing: 22px;
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-transform: uppercase;
@@ -87,7 +87,7 @@ export const Empty = styled.View`
 
 export const EmptyText = styled.Text`
   font-size: 14px;
-  letter-spacing: 1.11;
+  letter-spacing: 22px;
   font-family: 'Montserrat-SemiBold';
   color: #bdbdbd;
   text-align: center;
@@ -95,14 +95,13 @@ export const EmptyText = styled.Text`
 
 export const DueDate = styled.Text`
   font-size: 11px;
-  letter-spacing: 0.99;
   font-family: 'Montserrat-SemiBold';
   color: #bdbdbd;
 `;
 
 export const Value = styled.Text`
   font-size: 13px;
-  letter-spacing: 1.11;
+  letter-spacing: 22px;
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-align: left;
@@ -110,7 +109,6 @@ export const Value = styled.Text`
 
 export const Status = styled.Text`
   font-size: 11px;
-  letter-spacing: 0.99;
   font-family: 'Montserrat-SemiBold';
   text-align: right;
   align-self: flex-end;
@@ -141,7 +139,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 0.62;
+  letter-spacing: 14px;
   font-family: 'Montserrat-SemiBold';
 `;
 

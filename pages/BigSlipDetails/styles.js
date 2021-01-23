@@ -70,7 +70,7 @@ export const DeleteButtonText = styled.Text`
   font-family: 'Montserrat-SemiBold';
   font-size: 14px;
   color: #5056f6;
-  letter-spacing: 0.5;
+  letter-spacing: 12px;
   text-align: center;
 `;
 
@@ -86,6 +86,6 @@ export const SlipButtonText = styled.Text`
   font-family: 'Montserrat-SemiBold';
   font-size: 14px;
   color: #fff;
-  letter-spacing: 0.5;
+  letter-spacing: 12px;
   text-align: center;
 `;

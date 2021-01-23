@@ -32,8 +32,8 @@ import {
   DeleteRow,
 } from './styles';
 
-export default function BigBankSlipItem({ navigation }) {
-  const slipId = navigation.getParam('slipId', 0);
+export default function BigBankSlipItem({ navigation, route }) {
+  const slipId = route.params?.slipId ?? 0;
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const slipLoading = useSelector((state) => state.bigslips.loading);

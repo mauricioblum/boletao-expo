@@ -51,7 +51,7 @@ export const Title = styled.Text`
   color: ${colors.black};
   font-family: 'Montserrat-SemiBold';
   font-size: 24px;
-  letter-spacing: 2.04;
+  letter-spacing: 12px;
   text-align: center;
 `;
 
@@ -59,14 +59,12 @@ export const ActualMonth = styled.Text`
   color: #464646;
   font-family: 'Montserrat-Medium';
   font-size: 12px;
-  letter-spacing: 1.02;
   text-align: center;
   margin-top: ${metrics.baseMargin / 2}px;
 `;
 
 export const HeaderTitle = styled.Text`
   font-size: 12px;
-  letter-spacing: 1;
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-transform: uppercase;
@@ -137,7 +135,7 @@ export const SlipTitle = styled.Text.attrs({
   ellipseMode: 'tail',
 })`
   font-size: 13px;
-  letter-spacing: 1.11;
+  letter-spacing: 14px;
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-transform: uppercase;
@@ -146,7 +144,7 @@ export const SlipTitle = styled.Text.attrs({
 
 export const DueDate = styled.Text`
   font-size: 11px;
-  letter-spacing: 0.99;
+
   font-family: 'Montserrat-SemiBold';
   color: #bdbdbd;
   width: 150px;
@@ -154,7 +152,7 @@ export const DueDate = styled.Text`
 
 export const Value = styled.Text`
   font-size: 13px;
-  letter-spacing: 1.11;
+  letter-spacing: 14px;
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-align: left;
@@ -167,7 +165,7 @@ export const EditButton = styled.TouchableOpacity.attrs({
 
 export const Status = styled.Text`
   font-size: 11px;
-  letter-spacing: 0.99;
+
   font-family: 'Montserrat-SemiBold';
   text-align: right;
   align-self: flex-end;
@@ -183,7 +181,6 @@ export const CheckBoxSlip = styled(CheckBox).attrs({
 
 export const UnifiedText = styled.Text`
   font-size: 19px;
-  letter-spacing: 1.46;
   font-family: 'Montserrat-SemiBold';
   text-align: center;
   color: ${colors.black};
@@ -192,7 +189,7 @@ export const UnifiedText = styled.Text`
 
 export const UnifiedValueText = styled.Text`
   font-size: 27px;
-  letter-spacing: 2.07;
+  letter-spacing: 12px;
   font-family: 'Montserrat-SemiBold';
   text-align: center;
   color: ${colors.black};
@@ -223,7 +220,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 0.62;
+  letter-spacing: 14px;
   font-family: 'Montserrat-SemiBold';
 `;
 

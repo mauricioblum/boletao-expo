@@ -53,14 +53,12 @@ export const ActualMonth = styled.Text`
   color: ${colors.white};
   font-family: 'Montserrat-ExtraBold';
   font-size: 12px;
-  letter-spacing: 1.02;
   text-align: center;
   margin-top: ${metrics.baseMargin / 2}px;
 `;
 
 export const HeaderTitle = styled.Text`
   font-size: 12px;
-  letter-spacing: 1;
   font-family: 'Montserrat-SemiBold';
   color: #0b182a;
   text-transform: uppercase;

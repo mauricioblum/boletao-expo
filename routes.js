@@ -65,13 +65,13 @@ function UserTabs() {
       tabBarOptions={bottomTabOptions}
       lazy
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ color, size }) => {
+        tabBarIcon: () => {
           const icons = {
-            IuPay: 'file-invoice',
-            Beneficiaries: 'money-bill',
-            MyBigBankSlips: 'barcode',
+            Boletos: 'file-invoice',
+            Beneficiários: 'money-bill',
+            'Meus Boletões': 'barcode',
             Configs: 'cog',
-            Notifications: 'concierge-bell',
+            Notificações: 'concierge-bell',
           };
 
           return (
@@ -80,18 +80,18 @@ function UserTabs() {
         },
       })}
     >
-      <Tab.Screen name="IuPay" component={IuPay} />
-      <Tab.Screen name="Beneficiaries" component={Beneficiaries} />
-      <Tab.Screen name="MyBigBankSlips" component={MyBigBankSlips} />
+      <Tab.Screen name="Boletos" component={IuPay} />
+      <Tab.Screen name="Beneficiários" component={Beneficiaries} />
+      <Tab.Screen name="Meus Boletões" component={MyBigBankSlips} />
       <Tab.Screen name="Configs" component={Configs} />
-      <Tab.Screen name="Notifications" component={Notifications} />
+      <Tab.Screen name="Notificações" component={Notifications} />
     </Tab.Navigator>
   );
 }
 
 // eslint-disable-next-line react/prop-types
 const Routes = ({ userLogged = false }) => {
-  console.log('userLogged', userLogged);
+  console.log(userLogged ? 'userLogged' : 'user not logged');
   return (
     <NavigationContainer>
       <Stack.Navigator

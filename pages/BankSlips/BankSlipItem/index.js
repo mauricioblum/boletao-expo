@@ -31,8 +31,8 @@ import {
   NoProof,
 } from './styles';
 
-export default function BankSlipItem({ navigation }) {
-  const slip = navigation.getParam('slip', {});
+export default function BankSlipItem({ navigation, route }) {
+  const slip = route.params?.slip ?? {};
   const dispatch = useDispatch();
   const [proofImg, setProofImg] = useState('empty');
   const [showProof, setShowProof] = useState(false);

@@ -22,7 +22,6 @@ export const UnifiedText = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.black};
   font-size: 19px;
-  letter-spacing: 1.46;
   text-align: center;
 `;
 
@@ -30,7 +29,7 @@ export const UnifiedLabel = styled.Text`
   font-family: 'Montserrat-SemiBold';
   color: ${colors.altgray};
   font-size: 13px;
-  letter-spacing: 1.11;
+  letter-spacing: 14px;
   text-align: center;
 `;
 
@@ -38,7 +37,7 @@ export const UnifiedValueText = styled.Text`
   font-family: 'Montserrat-Black';
   color: ${colors.black};
   font-size: 27px;
-  letter-spacing: 2.07;
+  letter-spacing: 12px;
   text-align: center;
   margin-top: ${metrics.baseMargin / 2}px;
   margin-bottom: ${metrics.baseMargin * 3}px;
@@ -62,7 +61,7 @@ export const ButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
   font-size: 12px;
-  letter-spacing: 0.62;
+  letter-spacing: 14px;
   font-family: 'Montserrat-SemiBold';
 `;
 

@@ -75,7 +75,6 @@ export const CustomButtons = ({
 );
 
 export default function IuPaySlipDetails({ navigation, route }) {
-  // const slip = navigation.getParam('slip', {});
   const slip = route.params?.slip ?? {};
   const [optionVisible, setOptionVisible] = useState(false);
   const [accountDetailsModalVisible, setAccountDetailsModalVisible] = useState(
@@ -143,7 +142,7 @@ export default function IuPaySlipDetails({ navigation, route }) {
   };
 
   const baseColor =
-    (slip.issuer.color && slip.issuer.color.background) || '#333';
+    (slip.issuer.color && slip.issuer.color?.background) || '#333';
 
   const handlePDF = (downloadURL) => {
     if (downloadURL) {
@@ -223,22 +222,25 @@ export default function IuPaySlipDetails({ navigation, route }) {
         height={245}
         overlayStyle={modalStyle}
       >
-        <ModalHeader>
-          <ModalHeaderTitle>Detalhes da conta</ModalHeaderTitle>
-          <ModalClose onPress={() => setAccountDetailsModalVisible(false)}>
-            <Icon name="x-circle" color="#727272" size={24} />
-          </ModalClose>
-        </ModalHeader>
-        <ModalContent>
-          <ModalTitle color={baseColor}>{slip.issuer.name}</ModalTitle>
-          <ModalTextBold>{parsedAccountDates.short}</ModalTextBold>
-          <ModalText>
-            Valor: <ModalTextBold>R$ {slipValue}</ModalTextBold>
-          </ModalText>
-          <ModalText>
-            Vencimento: <ModalTextBold>{parsedAccountDates.long}</ModalTextBold>
-          </ModalText>
-        </ModalContent>
+        <>
+          <ModalHeader>
+            <ModalHeaderTitle>Detalhes da conta</ModalHeaderTitle>
+            <ModalClose onPress={() => setAccountDetailsModalVisible(false)}>
+              <Icon name="x-circle" color="#727272" size={24} />
+            </ModalClose>
+          </ModalHeader>
+          <ModalContent>
+            <ModalTitle color={baseColor}>{slip.issuer.name}</ModalTitle>
+            <ModalTextBold>{parsedAccountDates.short}</ModalTextBold>
+            <ModalText>
+              Valor: <ModalTextBold>R$ {slipValue}</ModalTextBold>
+            </ModalText>
+            <ModalText>
+              Vencimento:{' '}
+              <ModalTextBold>{parsedAccountDates.long}</ModalTextBold>
+            </ModalText>
+          </ModalContent>
+        </>
       </Overlay>
     </>
   );
