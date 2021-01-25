@@ -24,6 +24,8 @@
         "foregroundImage": "./assets/images/boletao-transparent.png",
         "backgroundColor": "#FFFFFF"
       },
+      "useNextNotificationsApi": true,
+      "googleServicesFile": "./google-services.json",
       "package": "org.nativescript.boletaoapp",
       "versionCode": 10018
     },

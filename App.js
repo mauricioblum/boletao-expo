@@ -1,38 +1,122 @@
 import 'react-native-gesture-handler';
 import { enableScreens } from 'react-native-screens';
+import Constants from 'expo-constants';
 
 import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as ScreenOrientation from 'expo-screen-orientation';
-import * as firebase from 'firebase';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { NotificationsTypes } from 'store/ducks/notifications';
-
+import * as Notifications from 'expo-notifications';
 import { store, persistor } from './src/store';
-import * as NavigationService from './src/services/NavigationService';
 import Routes from './src/routes';
 import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
 import { customFonts } from './assets/fonts/customFonts';
 
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyATjQb-diXwMxMK1Q6V59mm_HpogyUNupk',
-//   authDomain: 'project-id.firebaseapp.com',
-//   databaseURL: 'https://boletaoapp.firebaseio.com',
-//   projectId: 'boletaoapp',
-//   storageBucket: 'boletaoapp.appspot.com',
-//   projectNumber: '107471933995',
-// };
-
-// firebase.initializeApp(firebaseConfig);
-
 enableScreens();
+
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: true,
+    shouldSetBadge: true,
+  }),
+});
 
 export default function App() {
   const [userLogged, setUserLogged] = useState('');
   const [userChecked, setUserChecked] = useState(true);
+
+  const [expoPushToken, setExpoPushToken] = useState('');
+  const [notification, setNotification] = useState(false);
+  const notificationListener = useRef();
+  const responseListener = useRef();
+
+  async function registerForPushNotificationsAsync() {
+    let token;
+    if (Constants.isDevice) {
+      const {
+        status: existingStatus,
+      } = await Notifications.getPermissionsAsync();
+      let finalStatus = existingStatus;
+      if (existingStatus !== 'granted') {
+        const { status } = await Notifications.requestPermissionsAsync();
+        finalStatus = status;
+      }
+      if (finalStatus !== 'granted') {
+        alert('Failed to get push token for push notification!');
+        return;
+      }
+      token = (await Notifications.getExpoPushTokenAsync()).data;
+      console.log('expo push token', token);
+    } else {
+      alert('Must use physical device for Push Notifications');
+    }
+
+    if (Platform.OS === 'android') {
+      Notifications.setNotificationChannelAsync('default', {
+        name: 'default',
+        importance: Notifications.AndroidImportance.MAX,
+        vibrationPattern: [0, 250, 250, 250],
+        lightColor: '#FF231F7C',
+      });
+    }
+
+    return token;
+  }
+
+  function saveNotificationToStore(notification) {
+    const currentNotifications = [...store.getState().notifications.data];
+
+    const isAlreadyInStore = currentNotifications.find(
+      (n) => n.id === notification.identifier
+    );
+
+    if (isAlreadyInStore) {
+      return;
+    }
+
+    const stripedNotification = {
+      id: notification.identifier,
+      body: notification.content.body,
+      title: notification.content.title,
+      date: Date.now(),
+    };
+    currentNotifications.push(stripedNotification);
+    store.dispatch({
+      type: NotificationsTypes.SAVE_NOTIFICATIONS,
+      notifications: currentNotifications,
+    });
+  }
+
+  useEffect(() => {
+    registerForPushNotificationsAsync().then((token) =>
+      setExpoPushToken(token)
+    );
+
+    // This listener is fired whenever a notification is received while the app is foregrounded
+    notificationListener.current = Notifications.addNotificationReceivedListener(
+      (notification) => {
+        saveNotificationToStore(notification.request);
+        setNotification(notification);
+      }
+    );
+
+    // This listener is fired whenever a user taps on or interacts with a notification (works when app is foregrounded, backgrounded, or killed)
+    responseListener.current = Notifications.addNotificationResponseReceivedListener(
+      (response) => {
+        saveNotificationToStore(response.notification.request);
+      }
+    );
+
+    return () => {
+      Notifications.removeNotificationSubscription(notificationListener);
+      Notifications.removeNotificationSubscription(responseListener);
+    };
+  }, []);
 
   useEffect(() => {
     async function lockToPortrait() {
@@ -42,7 +126,6 @@ export default function App() {
     }
     lockToPortrait();
     checkLogin();
-    // startNotificationService();
   }, []);
 
   async function checkLogin() {
@@ -50,70 +133,6 @@ export default function App() {
 
     setUserChecked(true);
     setUserLogged(!!token);
-    // console.tron.log(token);
-  }
-  // PUSH NOTIFICATION SETUP START
-  async function getToken() {
-    let fcmToken = await AsyncStorage.getItem('fcmToken');
-    if (!fcmToken) {
-      fcmToken = await firebase.messaging().getToken();
-      if (fcmToken) {
-        await AsyncStorage.setItem('fcmToken', fcmToken);
-      }
-    }
-  }
-
-  async function requestPermission() {
-    try {
-      await firebase.messaging().requestPermission();
-      getToken();
-    } catch (error) {
-      // console.tron.log('permission rejected');
-    }
-  }
-
-  async function checkPermission() {
-    const enabled = await firebase.messaging().hasPermission();
-    if (enabled) {
-      getToken();
-    } else {
-      requestPermission();
-    }
-  }
-
-  async function createNotificationListeners() {
-    firebase.notifications().onNotification((notification) => {
-      notification.android.setChannelId('insider').setSound('default');
-      firebase.notifications().displayNotification(notification);
-      const stripedNotification = {
-        id: notification.notificationId,
-        body: notification.body,
-        title: notification.title,
-        date: Date.now(),
-      };
-      // eslint-disable-next-line prefer-const
-      let newList = [...store.getState().notifications.data];
-      newList.push(stripedNotification);
-      store.dispatch({
-        type: NotificationsTypes.SAVE_NOTIFICATIONS,
-        notifications: newList,
-      });
-    });
-    firebase.notifications().onNotificationOpened(() => {
-      NavigationService.navigate('Notifications');
-    });
-  }
-  // PUSH NOTIFICATION SETUP END
-
-  function startNotificationService() {
-    const channel = new firebase.notifications.Android.Channel(
-      'insider',
-      'insider channel',
-      firebase.notifications.Android.Importance.High
-    );
-    firebase.notifications().android.createChannel(channel);
-    checkPermission();
-    createNotificationListeners();
   }
 
   const prefix = 'boletaoapp://';

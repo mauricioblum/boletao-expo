@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { RefreshControl, Text } from 'react-native';
 import { useSelector } from 'react-redux';
@@ -29,6 +29,7 @@ const dateSeven = new Date();
 dateSeven.setDate(dateSeven.getDate() + 7);
 
 export default function IuPay({ navigation }) {
+  const isMountedRef = useRef(null);
   const [refreshing, setRefreshing] = useState(true);
   const [iuPaySlips, setIuPaySlips] = useState([]);
   const [
@@ -76,7 +77,7 @@ export default function IuPay({ navigation }) {
         }))
         .filter((slip) => slip.value > 0);
       setParsedSlips([...parsed]);
-      if (!isRefresh) {
+      if (!isRefresh && isMountedRef.current) {
         const filteredSlips = parsed.filter((slip) =>
           isSameMonth(new Date(), slip.dueDate)
         );
@@ -93,7 +94,10 @@ export default function IuPay({ navigation }) {
   }
 
   useEffect(() => {
+    isMountedRef.current = true;
+
     getIuPaySlips(false);
+    return () => (isMountedRef.current = false);
   }, []);
 
   const featuredSlips = useMemo(() => {
