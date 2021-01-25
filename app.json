@@ -16,7 +16,7 @@
     "ios": {
       "supportsTablet": false,
       "requireFullScreen": true,
-      "bundleIdentifier": "org.nativescript.boletaoapp",
+      "bundleIdentifier": "org.nativescript.boletaoappios",
       "buildNumber": "1.0.0"
     },
     "android": {
